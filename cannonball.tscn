@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn6f8fkx401ov"]
+
+[ext_resource type="Texture2D" uid="uid://t2lygr7xwien" path="res://cannonball.png" id="1_wx5jm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loof7"]
+size = Vector2(38, 38)
+
+[node name="Cannonball" type="RigidBody2D"]
+mass = 0.1
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_wx5jm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_loof7")
