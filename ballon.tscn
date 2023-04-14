@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d26rxibmfdlxi"]
+
+[ext_resource type="Texture2D" uid="uid://saxediddtx70" path="res://ballon.png" id="1_vilrd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78oql"]
+radius = 152.003
+
+[node name="Ballon" type="RigidBody2D"]
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vilrd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_78oql")

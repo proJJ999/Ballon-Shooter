@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://btaoh6hewijmt"]
+[gd_scene load_steps=6 format=3 uid="uid://btaoh6hewijmt"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_723l6"]
 [ext_resource type="PackedScene" uid="uid://bv5uaa5athlia" path="res://cannon.tscn" id="2_8eevq"]
 [ext_resource type="PackedScene" uid="uid://cn6f8fkx401ov" path="res://cannonball.tscn" id="2_tsu72"]
+[ext_resource type="PackedScene" uid="uid://efu5s6u76kck" path="res://hud.tscn" id="4_iyiko"]
+[ext_resource type="PackedScene" uid="uid://d26rxibmfdlxi" path="res://ballon.tscn" id="5_0obem"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_723l6")
@@ -16,3 +18,8 @@ one_shot = true
 
 [node name="StartPoint" type="Marker2D" parent="."]
 position = Vector2(0, 648)
+
+[node name="Hud" parent="." instance=ExtResource("4_iyiko")]
+
+[node name="Ballon" parent="." instance=ExtResource("5_0obem")]
+position = Vector2(786, 292)
