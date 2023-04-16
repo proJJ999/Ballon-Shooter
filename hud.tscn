@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://efu5s6u76kck"]
+[gd_scene load_steps=3 format=3 uid="uid://efu5s6u76kck"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_30kt7"]
+[ext_resource type="PackedScene" uid="uid://ciyeuuoipl4yb" path="res://lifebar.tscn" id="2_caspj"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_30kt7")
@@ -22,3 +23,11 @@ theme_override_font_sizes/font_size = 64
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Lifebar" parent="." instance=ExtResource("2_caspj")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_right = 0.0
+grow_horizontal = 0

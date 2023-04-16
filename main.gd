@@ -5,7 +5,7 @@ extends Node
 
 var shootable = true
 var score = 0
-var lifes = 3
+var lives = 3
 
 var MIN_BALLON_X_POS
 var MAX_BALLON_X_POS
@@ -23,6 +23,8 @@ func _ready():
 	MIN_BALLON_Y_POS = 100
 	MAX_BALLON_Y_POS = get_window().size.y - 100
 	spawn_ballons(3)
+	$Hud.update_lifebar(lives)
+	
 
 func spawn_ballons(ballon_number):
 	for n in range(ballon_number):
@@ -67,11 +69,13 @@ func create_cannonball():
 	
 func update_progressbar():
 	var percentige = (shooting_force - MIN_SHOOTING_FORCE) / (MAX_SHOOTING_FORCE - MIN_SHOOTING_FORCE)
-	$Hud.update_progress_bar(percentige)
+	$Hud.update_progressbar(percentige)
 
 func missed():
-	score -= 1
-	$Hud.update_score(score)
+	lives -= 1
+	$Hud.update_lifebar(lives)
+	if lives == 0:
+		set_process(false)
 	
 func hit():
 	score += 1

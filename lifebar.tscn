@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciyeuuoipl4yb"]
+
+[ext_resource type="Script" path="res://Lifebar.gd" id="1_ty4aa"]
+[ext_resource type="PackedScene" uid="uid://d2uuesvslpk73" path="res://life.tscn" id="2_mtv8q"]
+
+[node name="Lifebar" type="Container"]
+offset_left = 272.0
+offset_right = 512.0
+offset_bottom = 92.0
+script = ExtResource("1_ty4aa")
+life_scene = ExtResource("2_mtv8q")
