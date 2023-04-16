@@ -27,12 +27,29 @@ func _ready():
 	$Hud.show_game_over(false)
 	
 func spawn_ballons(ballon_number):
-	for n in range(ballon_number):
+	var ballons = []
+	for i in range(ballon_number):
 		var ballon = ballon_scene.instantiate()
-		ballon.position.x = randi_range(MIN_BALLON_X_POS, MAX_BALLON_X_POS)
-		ballon.position.y = randi_range(MIN_BALLON_Y_POS, MAX_BALLON_Y_POS)
-		ballon.change_scale(randf_range(0.4, 0.8))
+		var position_invalid = true
+		while(position_invalid):
+			ballon.position.x = randi_range(MIN_BALLON_X_POS, MAX_BALLON_X_POS)
+			ballon.position.y = randi_range(MIN_BALLON_Y_POS, MAX_BALLON_Y_POS)
+			ballon.change_size_level(randi_range(1, 3))
+			position_invalid = is_overlapping(ballon, ballons)
+		ballons.append(ballon)
 		add_child(ballon)
+
+func is_overlapping(new_ballon, ballons):
+	for i in range(ballons.size()):
+		var ballon = ballons[i]
+		if ballon == null:
+			return false
+		var new_radiant = new_ballon.get_radiant()
+		var ballon_radiant = ballon.get_radiant()
+		var position_diff = new_ballon.position.distance_to(ballon.position)
+		if (position_diff <= new_radiant + ballon_radiant):
+			return true
+	return false
 
 func _process(delta):
 	if not shootable:
