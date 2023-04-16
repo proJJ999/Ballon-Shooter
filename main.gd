@@ -14,7 +14,7 @@ var MAX_BALLON_Y_POS
 
 var MIN_SHOOTING_FORCE = 3000
 var MAX_SHOOTING_FORCE = 8000
-var shooting_force = 3000
+var shooting_force = MIN_SHOOTING_FORCE
 var shooting_force_increase_speed = 5000
 
 func _ready():
@@ -54,14 +54,13 @@ func is_overlapping(new_ballon, ballons):
 func _process(delta):
 	if not shootable:
 		return
-	
-	if Input.is_action_just_pressed("shoot"):
-		shooting_force = MIN_SHOOTING_FORCE
+		
 	if Input.is_action_pressed("shoot"):
 		shooting_force += shooting_force_increase_speed * delta
 		shooting_force = clamp(shooting_force, MIN_SHOOTING_FORCE, MAX_SHOOTING_FORCE)
 	if Input.is_action_just_released("shoot"):
 		shoot()
+		shooting_force = MIN_SHOOTING_FORCE
 		
 	update_progressbar()
 
