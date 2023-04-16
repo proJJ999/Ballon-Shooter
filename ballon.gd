@@ -1,6 +1,7 @@
 extends RigidBody2D
+class_name Ballon
 
-var sizes = [0.4, 0.6, 0.8]
+var sizes = [0.8, 0.6, 0.4]
 var size_level = 3
 
 # Called when the node enters the scene tree for the first time.

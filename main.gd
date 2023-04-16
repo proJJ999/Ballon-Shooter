@@ -95,7 +95,8 @@ func missed():
 		$Hud.show_game_over(true)
 		set_process(false)
 	
-func hit():
-	score += 1
+func hit(body):
+	if body is Ballon:
+		score += body.get_size_level()
 	$Hud.update_score(score)
 	
