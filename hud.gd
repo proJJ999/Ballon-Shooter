@@ -9,3 +9,6 @@ func update_progressbar(percentige):
 	
 func update_lifebar(count):
 	$Lifebar.set_lives(count)
+
+func show_game_over(value):
+	$GameOver.visible = value

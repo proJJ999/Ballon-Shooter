@@ -24,8 +24,8 @@ func _ready():
 	MAX_BALLON_Y_POS = get_window().size.y - 100
 	spawn_ballons(3)
 	$Hud.update_lifebar(lives)
+	$Hud.show_game_over(false)
 	
-
 func spawn_ballons(ballon_number):
 	for n in range(ballon_number):
 		var ballon = ballon_scene.instantiate()
@@ -75,6 +75,7 @@ func missed():
 	lives -= 1
 	$Hud.update_lifebar(lives)
 	if lives == 0:
+		$Hud.show_game_over(true)
 		set_process(false)
 	
 func hit():
