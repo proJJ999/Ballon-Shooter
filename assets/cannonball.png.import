@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr6ae7oyomhse"
-path="res://.godot/imported/cannon.png-f77e13959ce355916ec84b043cdbbce5.ctex"
+uid="uid://t2lygr7xwien"
+path="res://.godot/imported/cannonball.png-860711071f3089f0813370f7eec763b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cannon.png"
-dest_files=["res://.godot/imported/cannon.png-f77e13959ce355916ec84b043cdbbce5.ctex"]
+source_file="res://assets/cannonball.png"
+dest_files=["res://.godot/imported/cannonball.png-860711071f3089f0813370f7eec763b5.ctex"]
 
 [params]
 

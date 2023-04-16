@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv5uaa5athlia"]
 
-[ext_resource type="Texture2D" uid="uid://cr6ae7oyomhse" path="res://cannon.png" id="1_cet4p"]
+[ext_resource type="Texture2D" uid="uid://cr6ae7oyomhse" path="res://assets/cannon.png" id="1_cet4p"]
 [ext_resource type="Script" path="res://cannon.gd" id="2_k4d5h"]
 
 [node name="Cannon" type="Sprite2D"]

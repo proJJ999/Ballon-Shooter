@@ -1,15 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://d26rxibmfdlxi"]
+[gd_scene load_steps=7 format=3 uid="uid://cimdniaaec5lg"]
 
-[ext_resource type="Texture2D" uid="uid://saxediddtx70" path="res://ballon.png" id="1_vilrd"]
+[ext_resource type="Texture2D" uid="uid://saxediddtx70" path="res://assets/ballon3.png" id="1_gnre1"]
+[ext_resource type="Script" path="res://ballon.gd" id="1_vjonh"]
+[ext_resource type="Texture2D" uid="uid://cp5ay1x8uycyx" path="res://assets/ballon1.png" id="2_y3xm7"]
+[ext_resource type="Texture2D" uid="uid://coy6f2f5su33n" path="res://assets/ballon2.png" id="3_ar1ai"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78oql"]
 radius = 152.003
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0pt7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y3xm7")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gnre1")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ar1ai")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}]
+
 [node name="Ballon" type="RigidBody2D"]
 freeze = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_vilrd")
+script = ExtResource("1_vjonh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_78oql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n0pt7")
+animation = &"green"
