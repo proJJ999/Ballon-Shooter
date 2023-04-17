@@ -8,15 +8,11 @@ func _ready():
 	$Hud.show_game_over(false)
 
 func _process(delta):
-	
 	update_progressbar()
 
-
-	
-	
 func update_progressbar():
-	var percentige = $ShootingCannon.get_shooting_percentage()
-	$Hud.update_progressbar(percentige)
+	var percentage = $ShootingCannon.get_shooting_percentage()
+	$Hud.update_progressbar(percentage)
 
 func _on_shooting_cannon_hit(body):
 	if body is Ballon:
@@ -28,4 +24,4 @@ func _on_shooting_cannon_missed():
 	$Hud.update_lifebar(lives)
 	if lives == 0:
 		$Hud.show_game_over(true)
-		set_process(false)
+		$ShootingCannon.set_process(false)
