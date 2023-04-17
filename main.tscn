@@ -1,23 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://btaoh6hewijmt"]
+[gd_scene load_steps=5 format=3 uid="uid://btaoh6hewijmt"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_723l6"]
-[ext_resource type="PackedScene" uid="uid://bv5uaa5athlia" path="res://cannon.tscn" id="2_8eevq"]
-[ext_resource type="PackedScene" uid="uid://cn6f8fkx401ov" path="res://cannonball.tscn" id="2_tsu72"]
+[ext_resource type="PackedScene" uid="uid://dw0aepfcob43o" path="res://shooting_cannon.tscn" id="3_j6gcx"]
 [ext_resource type="PackedScene" uid="uid://efu5s6u76kck" path="res://hud.tscn" id="4_iyiko"]
-[ext_resource type="PackedScene" uid="uid://cimdniaaec5lg" path="res://ballon.tscn" id="5_0obem"]
+[ext_resource type="PackedScene" uid="uid://dhdhp8u1pslsu" path="res://ballon_area.tscn" id="5_1qs00"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_723l6")
-cannonball_scene = ExtResource("2_tsu72")
-ballon_scene = ExtResource("5_0obem")
 
-[node name="Cannon" parent="." instance=ExtResource("2_8eevq")]
-
-[node name="CannonballCooldown" type="Timer" parent="."]
-wait_time = 1.5
-one_shot = true
-
-[node name="StartPoint" type="Marker2D" parent="."]
-position = Vector2(0, 648)
+[node name="ShootingCannon" parent="." instance=ExtResource("3_j6gcx")]
 
 [node name="Hud" parent="." instance=ExtResource("4_iyiko")]
+
+[node name="BallonArea" parent="." instance=ExtResource("5_1qs00")]
+
+[connection signal="hit" from="ShootingCannon" to="." method="_on_shooting_cannon_hit"]
+[connection signal="missed" from="ShootingCannon" to="." method="_on_shooting_cannon_missed"]

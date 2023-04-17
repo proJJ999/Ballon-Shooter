@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhdhp8u1pslsu"]
+
+[ext_resource type="Script" path="res://ballon_area.gd" id="1_3m04l"]
+[ext_resource type="PackedScene" uid="uid://cimdniaaec5lg" path="res://ballon.tscn" id="2_v8npj"]
+
+[node name="BallonArea" type="Node2D"]
+script = ExtResource("1_3m04l")
+ballon_scene = ExtResource("2_v8npj")
